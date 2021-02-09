@@ -3,6 +3,8 @@ from pymodaq.daq_move.utility_classes import comon_parameters  # common set of p
 from pymodaq.daq_utils.daq_utils import ThreadCommand, getLineInfo  # object used to send info back to the main thread
 from easydict import EasyDict as edict  # type of dict
 
+from ..hardware.wrapper import ActuatorWrapper
+
 class DAQ_Move_Test(DAQ_Move_base):
     """
         Wrapper object to access the Mock fonctionnalities, similar wrapper for all controllers.
@@ -12,8 +14,8 @@ class DAQ_Move_Test(DAQ_Move_base):
         *params*          dictionnary
         =============== ==============
     """
-    _controller_units = 'whatever'
-    is_multiaxes = True  # set to True if this plugin is controlled for a multiaxis controller (with a unique communication link)
+    _controller_units = ActuatorWrapper.units
+    is_multiaxes = False  # set to True if this plugin is controlled for a multiaxis controller (with a unique communication link)
     stage_names = []  # "list of strings of the multiaxes
 
     params = [   ## TODO for your custom plugin
@@ -76,11 +78,12 @@ class DAQ_Move_Test(DAQ_Move_base):
 
         """
 
-        ## TODO for your custom plugin
-        if param.name() == "a_parameter_you've_added_in_self.params":
-           self.controller.your_method_to_apply_this_param_change()
-        elif ...
-        ##
+        ### TODO for your custom plugin
+        #if param.name() == "a_parameter_you've_added_in_self.params":
+        #   self.controller.your_method_to_apply_this_param_change()
+        #elif ...
+        ###
+
 
     def ini_stage(self, controller=None):
         """Actuator communication initialization
@@ -116,7 +119,8 @@ class DAQ_Move_Test(DAQ_Move_base):
             else:  # Master stage
 
                 ## TODO for your custom plugin
-                self.controller = python_wrapper_of_your_instrument()  # any object that will control the stages
+                self.controller = ActuatorWrapper()  
+                self.open_communication() # any object that will control the stages
                 #####################################
 
             self.status.info = "Whatever info you want to log"

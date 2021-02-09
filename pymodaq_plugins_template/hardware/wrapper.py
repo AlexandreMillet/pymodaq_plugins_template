@@ -17,7 +17,7 @@ class ActuatorWrapper:
 
 		self._target_value = value
 		self._current_value = value
-		print("move_at, value = {} {}".format(self._target_value, units))		
+		print("move_at, value = {} {}".format(self._target_value, self.units))		
 
 	def stop(self):
 
@@ -26,7 +26,7 @@ class ActuatorWrapper:
 
 	def get_value(self):
 
-		print("get_value, value = {} {}".format(self._target_value, units))
+		print("get_value, value = {} {}".format(self._current_value, self.units))
 		return self._current_value
 
 	def close_communication(self):
