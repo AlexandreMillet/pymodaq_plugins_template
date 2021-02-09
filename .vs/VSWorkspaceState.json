@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\pymodaq_plugins_template",
+    "\\pymodaq_plugins_template\\daq_move_plugins",
     "\\pymodaq_plugins_template\\hardware"
   ],
-  "SelectedNode": "\\pymodaq_plugins_template\\hardware\\__init__.py",
+  "SelectedNode": "\\pymodaq_plugins_template\\hardware\\wrapper.py",
   "PreviewInSolutionExplorer": false
 }

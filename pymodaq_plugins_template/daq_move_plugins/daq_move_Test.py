@@ -3,7 +3,7 @@ from pymodaq.daq_move.utility_classes import comon_parameters  # common set of p
 from pymodaq.daq_utils.daq_utils import ThreadCommand, getLineInfo  # object used to send info back to the main thread
 from easydict import EasyDict as edict  # type of dict
 
-class DAQ_Move_Template(DAQ_Move_base):
+class DAQ_Move_Test(DAQ_Move_base):
     """
         Wrapper object to access the Mock fonctionnalities, similar wrapper for all controllers.
 
