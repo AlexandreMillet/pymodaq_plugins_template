@@ -54,7 +54,7 @@ class DAQ_Move_Test(DAQ_Move_base):
         float: The position obtained after scaling conversion.
         """
         ## TODO for your custom plugin
-        pos = self.controller.your_method_to_get_the_actuator_value()
+        pos = self.controller.get_value()
         ##
 
         pos = self.get_position_with_scaling(pos)
@@ -147,7 +147,7 @@ class DAQ_Move_Test(DAQ_Move_base):
         position = self.set_position_with_scaling(position)  # apply scaling if the user specified one
 
         ## TODO for your custom plugin
-        self.controller.your_method_to_set_an_absolute_value()
+        self.controller.move_at(position)
         self.emit_status(ThreadCommand('Update_Status',['Some info you want to log']))
         ##############################
 
@@ -167,7 +167,7 @@ class DAQ_Move_Test(DAQ_Move_base):
         self.target_position = position + self.current_position
 
         ## TODO for your custom plugin
-        self.controller.your_method_to_set_a_relative_value()
+        self.controller.move_at(self.target_position)
         self.emit_status(ThreadCommand('Update_Status',['Some info you want to log']))
         ##############################
 
@@ -182,7 +182,7 @@ class DAQ_Move_Test(DAQ_Move_base):
         """
 
         ## TODO for your custom plugin
-        self.controller.your_method_to_get_to_a_known_reference()
+        self.controller.move_at(0)
         self.emit_status(ThreadCommand('Update_Status',['Some info you want to log']))
         ##############################
 
@@ -197,7 +197,7 @@ class DAQ_Move_Test(DAQ_Move_base):
       """
 
       ## TODO for your custom plugin
-      self.controller.your_method_to_stop_positioning()
+      self.controller.stop()
       self.emit_status(ThreadCommand('Update_Status', ['Some info you want to log']))
       self.move_done() #to let the interface know the actuator stopped
       ##############################
