@@ -33,6 +33,9 @@ class ActuatorWrapper:
 
 		print("close_communication")
 		pass
-
-actuator = ActuatorWrapper()
-actuator.get_value()
+	
+if __name__ == "__main__" :
+	
+	actuator = ActuatorWrapper()
+	actuator.get_value()
+	
