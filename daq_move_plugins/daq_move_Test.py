@@ -67,7 +67,7 @@ class DAQ_Move_Test(DAQ_Move_base):
         Terminate the communication protocol
         """
         ## TODO for your custom plugin
-        self.controller.your_method_to_terminate_the_communication()
+        self.controller.close_communication()
         ##
 
     def commit_settings(self, param):
@@ -120,7 +120,7 @@ class DAQ_Move_Test(DAQ_Move_base):
 
                 ## TODO for your custom plugin
                 self.controller = ActuatorWrapper()  
-                self.open_communication() # any object that will control the stages
+                self.controller.open_communication() # any object that will control the stages
                 #####################################
 
             self.status.info = "Whatever info you want to log"

@@ -37,5 +37,6 @@ class ActuatorWrapper:
 if __name__ == "__main__" :
 	
 	actuator = ActuatorWrapper()
+	actuator.move_at(100)
 	actuator.get_value()
 	
