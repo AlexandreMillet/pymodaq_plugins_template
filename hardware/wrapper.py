@@ -11,7 +11,7 @@ class ActuatorWrapper:
 	def open_communication(self):
 
 		print("open_communication")
-		return true
+		return True
 
 	def move_at(self, value):
 

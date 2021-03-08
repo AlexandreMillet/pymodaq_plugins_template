@@ -15,7 +15,7 @@ class DAQ_Move_Test(DAQ_Move_base):
         =============== ==============
     """
     _controller_units = ActuatorWrapper.units
-    is_multiaxes = False  # set to True if this plugin is controlled for a multiaxis controller (with a unique communication link)
+    is_multiaxes = True  # set to True if this plugin is controlled for a multiaxis controller (with a unique communication link)
     stage_names = []  # "list of strings of the multiaxes
 
     params = [   ## TODO for your custom plugin
@@ -82,7 +82,7 @@ class DAQ_Move_Test(DAQ_Move_base):
         #if param.name() == "a_parameter_you've_added_in_self.params":
         #   self.controller.your_method_to_apply_this_param_change()
         #elif ...
-        ###
+        ###M
 
 
     def ini_stage(self, controller=None):
